@@ -25,3 +25,11 @@ function pageLoaded(args) {
 
 // END_CUSTOM_CODE_homeView
 exports.pageLoaded = pageLoaded;
+
+var frameModule = require("ui/frame");
+function onButtonTap(args) {
+    var clickedButton = args.object;
+    var topmost = frameModule.topmost();
+    topmost.navigate("components/" + clickedButton.text + "/page");
+}
+exports.onButtonTap = onButtonTap;
